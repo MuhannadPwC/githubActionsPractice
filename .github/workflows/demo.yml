@@ -1,9 +1,16 @@
 name: Events Demo
 on:
-  pull_request:
+  pull_request: # specifying branches for pull requests is allowed to only trigger workflow
     types:
       - opened
+    branches:
+      - dev-*
   workflow_dispatch:
+  push:
+    branches: # you can specify branches the workflow will trigger after push
+      - main
+    # paths-ignore: # workflow will not trigger if none of the files in this folder changed
+    #   - ".github/workflow/*"
 jobs:
   deploy:
     runs-on: ubuntu-latest
