@@ -1,12 +1,12 @@
-import { string } from 'prop-types';
+import { string } from "prop-types";
 
-import './HelpBox.css';
+import "./HelpBox.css";
 
 function HelpBox({ title, text }) {
   return (
     <article className="help-box">
       <h2>{title}</h2>
-      <p>{text}</p>
+      <h4>{text}</h4>
     </article>
   );
 }
